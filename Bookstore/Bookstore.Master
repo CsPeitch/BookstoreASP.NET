@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Bookstore.master.cs" Inherits="Bookstore.Bookstore" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Bookstore</title>
+    <link href="css/masterpage.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" type="image/png" href="./resources/icons/favicon.png"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="parent">
+    
+        <div id="top">
+            <div id="topimagecontainer"><img alt="" style="width: 15em; height: 100%" src="./resources/images/books.jpg"/></div>
+		    <div id="topmenucontainer">
+			    <div class="centercontent">
+				    <h1>Bookstore</h1>
+			    </div>
+			    <div class="centercontent">
+				    <a href="Default.aspx">Αρχική</a>
+				    <a href="shopinfo.aspx">Κατάστημα</a>
+				    <a href="products.aspx">Προϊόντα</a>
+				    <a href="login.aspx">Σύνδεση</a>
+				    <a href="register.aspx">Εγγραφή</a>
+				    <a href="cart.aspx">Καλάθι_αγορών</a>
+				    <a href="contact.aspx">Επικοινωνία</a>
+			    </div>
+		</div>
+        </div>
+        
+        <div id="container">
+            <div id="left">
+                <br />
+                
+                <div class="leftmenu">
+                    <b><asp:Label ID="lwelcome" runat="server" Text=""></asp:Label></b>
+                </div>
+                <br />
+                
+                <asp:ContentPlaceHolder ID="leftcontent" runat="server">
+                </asp:ContentPlaceHolder>
+                <br />
+                
+                <div class="leftmenu">
+                    <b><asp:Label ID="lusermenu" runat="server" Text=""></asp:Label></b>
+                </div>
+                
+                <ul id="usermenu" runat="server"></ul>
+                
+                <div class="leftmenu">
+                    <b><asp:Label ID="ladminmenu" runat="server" Text=""></asp:Label></b>
+                </div>
+                <ul id="adminmenu" runat="server"></ul>
+                
+            </div>
+            <div id="content">
+                <asp:ContentPlaceHolder ID="centercontent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="footercontainer">
+                <div style="width: 100%; height: auto; bottom:10px; position:absolute" align="center">Bookstore ASP.NET project</div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
